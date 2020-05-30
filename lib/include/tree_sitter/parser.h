@@ -9,6 +9,11 @@ extern "C" {
 #include <stdint.h>
 #include <stdlib.h>
 
+#ifdef _MSC_VER
+__pragma(warning(push))
+__pragma(warning(disable: 4214)) // nonstandard extension used: bit field types other than int
+#endif
+
 #define ts_builtin_sym_error ((TSSymbol)-1)
 #define ts_builtin_sym_end 0
 #define TREE_SITTER_SERIALIZATION_BUFFER_SIZE 1024
@@ -230,6 +235,10 @@ struct TSLanguage {
   {                                     \
     { .type = TSParseActionTypeAccept } \
   }
+
+#ifdef _MSC_VER
+__pragma(warning(pop))
+#endif
 
 #ifdef __cplusplus
 }

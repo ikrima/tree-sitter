@@ -5,6 +5,11 @@
 
 #define _POSIX_C_SOURCE 200112L
 
+#if defined(_MSC_VER)
+__pragma(warning(push))
+__pragma(warning(disable:4668))
+#endif
+
 #include "./get_changed_ranges.c"
 #include "./language.c"
 #include "./lexer.c"
@@ -15,3 +20,7 @@
 #include "./subtree.c"
 #include "./tree_cursor.c"
 #include "./tree.c"
+
+#if defined(_MSC_VER)
+__pragma(warning(pop))
+#endif

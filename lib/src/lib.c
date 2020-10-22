@@ -5,6 +5,12 @@
 
 #define _POSIX_C_SOURCE 200112L
 
+#if defined(__clang__)
+__pragma(clang diagnostic push)
+__pragma(clang diagnostic ignored "-Wshadow")
+__pragma(clang diagnostic ignored "-Wkeyword-macro")
+__pragma(clang diagnostic ignored "-Wformat-pedantic")
+#endif
 #if defined(_MSC_VER)
 __pragma(warning(push))
 __pragma(warning(disable:4668))
@@ -21,6 +27,9 @@ __pragma(warning(disable:4668))
 #include "./tree_cursor.c"
 #include "./tree.c"
 
+#if defined(__clang__)
+__pragma(clang diagnostic pop)
+#endif
 #if defined(_MSC_VER)
 __pragma(warning(pop))
 #endif

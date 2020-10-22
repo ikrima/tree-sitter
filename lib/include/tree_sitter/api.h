@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-  // Beg #TPLibMod-treesitter:  Include header for custom allocation
+// Beg #TPLibMod-treesitter:  Include header for custom allocation
 #if ES2_TREESITTER_API()
 #include "es2/subsys/es2capiwrappers.h"
 #endif

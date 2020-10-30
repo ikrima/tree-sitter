@@ -1250,13 +1250,13 @@ impl Generator {
         }
 
         add_line!(self, "#ifdef _WIN32");
-        add_line!(self, "#define extern __declspec(dllexport)");
+        add_line!(self, "#define TS_EXTERN __declspec(dllexport)");
         add_line!(self, "#endif");
         add_line!(self, "");
 
         add_line!(
             self,
-            "extern const TSLanguage *{}(void) {{",
+            "TS_EXTERN const TSLanguage *{}(void) {{",
             language_function_name
         );
         indent!(self);

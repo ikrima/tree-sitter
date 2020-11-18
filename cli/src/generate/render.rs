@@ -1251,6 +1251,8 @@ impl Generator {
 
         add_line!(self, "#ifdef _WIN32");
         add_line!(self, "#define TS_EXTERN __declspec(dllexport)");
+        add_line!(self, "#else");
+        add_line!(self, "#define TS_EXTERN extern");
         add_line!(self, "#endif");
         add_line!(self, "");
 

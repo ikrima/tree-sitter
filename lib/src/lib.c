@@ -10,6 +10,7 @@ __pragma(clang diagnostic push)
 __pragma(clang diagnostic ignored "-Wshadow")
 __pragma(clang diagnostic ignored "-Wkeyword-macro")
 __pragma(clang diagnostic ignored "-Wformat-pedantic")
+__pragma(clang diagnostic ignored "-Wundef")
 #endif
 #if defined(_MSC_VER)
 __pragma(warning(push))
